@@ -10,7 +10,7 @@ class ControllerPrincipale extends Controller
     public function fileupload( Request $request){
            // Validazione del file (facoltativa ma consigliata)
            $request->validate([
-            'file' => 'required|file|mimes:jpg,png,pdf|max:2048',  // esempio di validazione
+            'file' => 'required|file|mimes:txt, pdf, doc, docx, rtf, odt|max:2048',  // esempio di validazione
         ]);
 
         // Verifica se un file è stato caricato
