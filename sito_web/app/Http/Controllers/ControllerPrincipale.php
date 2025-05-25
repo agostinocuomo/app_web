@@ -24,5 +24,11 @@ class ControllerPrincipale extends Controller
 
             return back()->with('success', 'File caricato con successo!')->with('path', $path);
         }
+    } 
+
+    public function homepage(){
+       $form = true;
+
+        return view('homepage');
     }
 }
