@@ -14,15 +14,33 @@
             <div class="terzodiv"></div> 
         </div>
     </header>
+    <div>
+    <script src="">
+        // ✅ Iniettiamo la variabile nel JavaScript
+        let form = @json($form);
+    </script>
+    
+    @if($form == true)
+    <livewire:form />
+    @php
+    var_dump($form)
+    //problema JAVASCRIPT!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    @endphp
+    @else
+    <livewire:form2>   
+        @php
+        var_dump($form)
+        @endphp
+    @endif      
+    </div>
 
-
-    <form action="/path_to_your_backend" method="POST" enctype="multipart/form-data" class="form border border-secondary d-flex justify-content-center flex-column align-items-center  w-25 h-25">
-        <h2 class="text-center text-danger">Carica il tuo Documento</h2>
-    @csrf
-        <label for="document_file">Carica il Documento:</label><br>
-        <input type="file" id="document_file" name="document_file" accept=".pdf,.doc,.docx,.jpg,.png" required><br><br>
-        <input type="submit" value="Carica Documento">
+    <form id="myForm" action="/salva" method="POST">
+        @csrf
+        <input type="hidden" name="variabile" id="variabileInput">
     </form>
+    
+   
+    
 
    
 <div class="border border-secondary footer"></div>
