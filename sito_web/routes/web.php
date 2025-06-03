@@ -13,4 +13,4 @@ Route::post('/upload', [ControllerPrincipale::class, 'fileupload'])->name('file.
 
 Route::get('', [ControllerPrincipale::class, 'homepage'])->name('homepage');
 
-Route::post('/salva', [ControllerPrincipale::class, 'variabile'])->name('variabile');
+Route::get('/profilo/utente', [ControllerPrincipale::class, 'show'])->name('profilo.utente');

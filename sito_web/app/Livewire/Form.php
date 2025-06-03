@@ -22,6 +22,7 @@ class Form extends Component
     public $name;
     public $file;
     use WithFileUploads; 
+    public $form;
     
     
 
@@ -56,6 +57,11 @@ $validated=request()->validate([
  $this->reset();
 }
     
+
+public function vaiAlController()
+{
+    return redirect()->route('profilo.utente', ['id' => $this->form]);
+}
 
 
 

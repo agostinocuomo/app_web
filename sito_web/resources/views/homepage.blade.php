@@ -15,10 +15,10 @@
         </div>
     </header>
     <div>
-    <script src="">
+{{--     <script src="">
         // ✅ Iniettiamo la variabile nel JavaScript
         let form = @json($form);
-    </script>
+    </script> --}}
     
     @if($form == true)
     <livewire:form />
@@ -34,10 +34,7 @@
     @endif      
     </div>
 
-    <form id="myForm" action="/salva" method="POST">
-        @csrf
-        <input type="hidden" name="variabile" id="variabileInput">
-    </form>
+   
     
    
     
