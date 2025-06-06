@@ -20,24 +20,9 @@
         let form = @json($form);
     </script> --}}
     
-    @if($form == true)
     <livewire:form />
-    @php
-    var_dump($form)
-    //problema JAVASCRIPT!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    @endphp
-    @else
-    <livewire:form2>   
-        @php
-        var_dump($form)
-        @endphp
-    @endif      
-    </div>
+   
 
-   
-    
-   
-    
 
    
 <div class="border border-secondary footer"></div>

@@ -22,13 +22,12 @@ class Form extends Component
     public $name;
     public $file;
     use WithFileUploads; 
-    public $form;
+    public $form =true;
     
     
 
     public function submit(Request $request)
-    {
-       
+    {       
        
  // Salva file se esiste
  $this->name = $this->file->getClientOriginalName();
@@ -58,12 +57,15 @@ $validated=request()->validate([
 }
     
 
-public function vaiAlController()
+/* public function vaiAlController()
 {
     return redirect()->route('profilo.utente', ['id' => $this->form]);
+} */
+
+public function alternaForm()
+{
+    $this->form = !$this->form;
 }
-
-
 
 
     public function render()

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class ControllerPrincipale extends Controller
 {
 
+ 
    
     public function fileupload( Request $request){
            // Validazione del file (facoltativa ma consigliata)
@@ -26,16 +27,10 @@ class ControllerPrincipale extends Controller
             return back()->with('success', 'File caricato con successo!')->with('path', $path);
         }
     } 
-
-    public function show($form)
-    {
-        return view('profilo', compact('form'));
-    }
-    
+  
 
     public function homepage(){
-     
-
+        
         return view('homepage');
     }
 }
