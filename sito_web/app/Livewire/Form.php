@@ -23,6 +23,7 @@ class Form extends Component
     public $file;
     use WithFileUploads; 
     public $form =true;
+
     
     
 
@@ -66,7 +67,40 @@ public function alternaForm()
 {
     $this->form = !$this->form;
 }
+    
+public function upload(){
+    $estensione= pathinfo($this->name);
+    if($estensione == 'odt'){
+  switch($this->formato){
+    case 'pdf':
+        exec("libreoffice --headless --convert-to pdf --outdir sito_web\database\file $this->file", $output, $return_var);
 
+  break;
+  case 'doc':
+    exec("libreoffice --headless --convert-to doc --outdir sito_web\database\file $this->file", $output, $return_var);
+    break;
+    case 'docx':
+        exec("libreoffice --headless --convert-to docx --outdir sito_web\database\file $this->file", $output, $return_var);
+        break;
+        case 'html':
+            exec("libreoffice --headless --convert-to html --outdir sito_web\database\file $this->file", $output, $return_var);
+            break;
+            case 'txt':
+                exec("libreoffice --headless --convert-to txt --outdir sito_web\database\file $this->file", $output, $return_var);
+                break;
+                case 'epub':
+                    exec("libreoffice --headless --convert-to epub --outdir sito_web\database\file $this->file", $output, $return_var);
+                    break;
+                    case 'rtf':
+                        exec("libreoffice --headless --convert-to rtf --outdir sito_web\database\file $this->file", $output, $return_var);
+                        break;
+                        case 'odt':
+                            exec("libreoffice --headless --convert-to odt --outdir sito_web\database\file $this->file", $output, $return_var);
+                            break;
+  }
+}else if($estensione == 'doc'){}
+ 
+    }
 
     public function render()
     {
